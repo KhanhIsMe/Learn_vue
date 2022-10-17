@@ -1,0 +1,14 @@
+   <div id="app">
+        <login-form />
+        <hr />
+        <button @click="change" >Hiển thị</button>
+        <div v-if='isVisible' class="box"></div>
+    </div>
+    <div id="app-4">
+        <button @click="count++">
+          Add Count: {{ count }}
+        </button>
+        <button @click="count--">
+            Reduce Count: {{ count }}
+          </button>
+      </div>

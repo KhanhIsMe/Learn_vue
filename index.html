@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./src/style/styles.css">
+    <link rel="stylesheet" href="./src/bootstrap-5.2.0-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="./src/fontawesome-free-6.1.1-web/css/all.css">
+    <script src="./src/fontawesome-free-6.1.1-web/js/all.js"></script>
+    <script src="./vue.global.js" ></script>
+    <script src="./src/bootstrap-5.2.0-dist/js/bootstrap.js"></script>
+    <title>Vue 3 basic</title>
+</head>
+<body>
+    <!-- <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script> -->
+
+    <div class="header">
+        <div class="top_header">
+            <div class="left">
+                <div class="nguoiban">
+                    <p>Kênh người bán</p>
+                </div>
+                <div class="dowloadapp">
+                    <p>Tải ứng dụng</p>
+                </div>
+                <i class="fa-brands fa-facebook custom-icon"></i>
+                <i class="fa-brands fa-instagram custom-icon"></i>
+            </div>
+            <div class="right">
+                <div class="notification">
+                    <i class="fa-regular fa-bell custom-icon"></i>
+                    <p>Thông báo</p>
+                </div>
+                <div class="help">
+                    <i class="fa-solid fa-circle-question custom-icon"></i>
+                    <p>Hỗ trợ</p>
+                </div>
+                <div class="language">
+                    <i class="fa-solid fa-globe custom-icon"></i>
+                    <select class="form-select" aria-label="Default select example">
+                        <option selected>Ngôn ngữ</option>
+                        <option value="1">Tiếng việt</option>
+                        <option value="2">English</option>
+                      </select>
+                </div>
+                <div class="user">
+                    <i class="fa-solid fa-user custom-icon"></i>
+                    <p>Tên ngươi dùng</p>
+                </div>
+            </div>
+        </div>
+        <div class="bottom_header">
+            <div class="left">
+                <div class="logo-icon">
+                    <i class="fa-solid fa-shop"></i>
+                </div>
+                <div class="logo-text">
+                    <h1>Shoppe Mall</h1>
+
+                </div>
+            </div>
+            <div class="right">
+                <input type="search" id="search" placeholder="Sản phẩm tìm kiếm">
+                <i class="fa-solid fa-magnifying-glass icon-search"></i>
+                <div class="dohang">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <div class="soluong"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="app">
+        <div class="container">
+            <div class="left-container">
+                <div class="modal-img">
+                    <img src="./src/img/sản phẩm/1.png" alt="">
+                </div>
+                
+                <div class="change-item">
+                    <div class="item 1"><img src="./src/img/sản phẩm/2.jpg" alt=""></div>
+                    <div class="item 2"><img src="./src/img/sản phẩm/3.jpg" alt=""></div>
+                    <div class="item 3"><img src="./src/img/sản phẩm/4.jpg" alt=""></div>
+                    <div class="item 4"><img src="./src/img/sản phẩm/5.jpg" alt=""></div>
+                </div>
+            </div>
+            <div class="right-container">
+                <div class="name-sp">
+                    <a v-bind:href="url" v-bind:target="target">{{title}}</a>
+                </div>
+                
+                <div class="prime text-ogrine"><p>{{ formatPrime() }}</p></div>
+                
+            </div>
+            <div class="right">
+    
+            </div>
+        </div>
+    </div>
+    
+    <div class="footer">
+        
+    </div>
+    <script src="./main1.js"></script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="./vue.global.js"></script>
+  </head>
+  <style>
+    .tabs {
+      margin: 0;
+      padding: 0;
+    }
+    .tabs li {
+      cursor: pointer;
+      display: inline;
+      padding: 10px 15px;
+      border: 1px solid #000;
+    }
+    .login,
+    .resiger {
+      margin: 20px;
+      padding: 10px;
+      border: 2px solid blueviolet;
+    }
+  </style>
+  <body>
+    <div id="app">
+      <ul class="tabs">
+        <li @click="changeForm('login')">Đăng nhập</li>
+        <li @click="changeForm('resiger')">Đăng kí</li>
+      </ul>
+      <div class="login" v-if="change === 'login'">
+        <input type="text" placeholder="Tên đăng nhập" />
+        <input type="password" placeholder="Nhập mậy khẩu" />
+        <button @click="changeForm('exit')">Exit</button>
+      </div>
+      <div class="resiger" v-if="change === 'resiger'">
+        <input type="text" placeholder="Tên đăng nhập" />
+        <input
+          v-on:keyup.enter="getPass"
+          type="password"
+          placeholder="Nhập mậy khẩu"
+        />
+        <input
+          v-on:keyup.enter="ssPass"
+          type="password"
+          placeholder="Nhập lại mậy khẩu"
+        />
+        <button @click="changeForm('exit')">Exit</button>
+      </div>
+    </div>
+    <script>
+      const { createApp } = Vue;
+      let app = createApp({
+        data() {
+          return {
+            change: "",
+            user: "",
+            passworld: "",
+          };
+        },
+        methods: {
+          changeForm(tab) {
+            this.change = tab;
+          },
+          getPass(e) {
+            this.passworld = e.target.value;
+            console.log(e.target.value);
+          },
+          ssPass(e) {
+            console.log(e.target.value);
+            e.target.value == this.passworld
+              ? alert("Thành công")
+              : alert("Không thành ông");
+          },
+        },
+      }).mount("#app");
+    </script>
+  </body>
+</html>

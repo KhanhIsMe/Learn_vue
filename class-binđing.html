@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="./vue.global.js"></script>
+  </head>
+  <style>
+    .static {
+      height: 200px;
+      width: 200px;
+      background-color: rgb(254, 57, 57);
+    }
+    .active {
+      background-color: rgb(0, 200, 0);
+    }
+  </style>
+  <body>
+    <div id="app">
+      <div class="static" :class="{ active :isActive }"></div>
+      <button v-on:click="change">Đổi màu</button>
+      <div v-bind:style="objectStyle"></div>
+    </div>
+    <script>
+      const { createApp } = Vue;
+      let app = createApp({
+        data() {
+          return {
+            isActive: true,
+            bg: "	https://cdn.pixabay.com/photo/2016/05/05/02/37/sunset-1373171__480.jpg",
+          };
+        },
+        methods: {
+          change() {
+            this.isActive = !this.isActive;
+          },
+        },
+        computed: {
+          objectStyle() {
+            return {
+              backgroundImage: "url(" + this.bg + ")",
+              height: "100px",
+              width: "100px",
+            };
+          },
+        },
+      }).mount("#app");
+    </script>
+  </body>
+</html>
